@@ -45,20 +45,23 @@
     /*Boton De limpiar el TextView*/
 
     <Button
+        android:id="@+id/clear_text"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginLeft="-390dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="#4ad"
-
+        android:onClick="clear_text"
         android:text="CLEAR" />
 
     <Button
+        android:id="@+id/euro"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="#4ad356"
+        android:onClick="euros"
         android:text="EUR" />
 
     <Button
@@ -67,6 +70,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="#4ad356"
+        android:onClick="Dolares"
         android:text="US" />
 
     /*Lista de los botones Numericos*/

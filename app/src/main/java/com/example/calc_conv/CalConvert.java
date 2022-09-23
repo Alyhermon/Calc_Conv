@@ -1,8 +1,12 @@
 package com.example.calc_conv;
 
+import static android.text.method.TextKeyListener.clear;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class CalConvert extends AppCompatActivity {
@@ -10,15 +14,24 @@ public class CalConvert extends AppCompatActivity {
     TextView tvnombre;
     TextView tvvalor;
     float numero1 = 0.0f;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cal_convert);
         tvvalor = findViewById(R.id.tvvalor);
+        tvnombre = findViewById(R.id.tvnombre);
+
+        Bundle recibeDatos = getIntent().getExtras();
+        String info = recibeDatos.getString("KeyDatos");
+
+        tvnombre.setText(info);
+
     }
 
 
+    //Botones...
     public void numero7(View view) {
         numero1 = Float.parseFloat(tvvalor.getText().toString());
         if (numero1 == 0.0f){
@@ -118,5 +131,27 @@ public class CalConvert extends AppCompatActivity {
         else{
             tvvalor.setText(tvvalor.getText() + "3");
         }
+    }
+
+    public void clear_text(View view) {
+        tvvalor.setText("0");
+        numero1 = 0.0f;
+    }
+
+    public void euros(View view) {
+        String euro = tvvalor.getText().toString();
+        Double euros = Double.parseDouble(euro);
+
+        Double resultado;
+        resultado = euros * 1.13;
+
+    }
+
+    public void Dolares(View view) {
+        String dolar = tvvalor.getText().toString();
+        Double dolares = Double.parseDouble(dolar);
+
+        Double resultado = dolares * 1.13;
+
     }
 }

@@ -5,23 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText edtnombre;
+    Button btnsiguiente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         edtnombre = (EditText) findViewById(R.id.edtnombre);
+        btnsiguiente = (Button) findViewById(R.id.btnsiguiente);
     }
     public void siguiente(View V){
         if (validar()){
             Toast.makeText(this, "Entrando...", Toast.LENGTH_SHORT).show();
+            Bundle enviarDatos = new Bundle();
+            enviarDatos.putString("keyDatos", edtnombre.getText().toString());
             Intent i = new Intent(this, CalConvert.class);
-            startActivity(i);
+            i.putExtras(enviarDatos);
+            startActivity (i);
         }
 
     }
