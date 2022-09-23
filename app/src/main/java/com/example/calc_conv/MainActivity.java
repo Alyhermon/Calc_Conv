@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean validar(){
 
+
         boolean retornar = true;
         String edt1 = edtnombre.getText().toString();
         if (edt1.isEmpty()){
