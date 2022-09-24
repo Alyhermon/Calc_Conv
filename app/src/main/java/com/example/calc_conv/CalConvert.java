@@ -3,6 +3,8 @@ package com.example.calc_conv;
 import static android.text.method.TextKeyListener.clear;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class CalConvert extends AppCompatActivity {
+
 
     TextView tvnombre;
     TextView tvvalor;
@@ -138,20 +141,44 @@ public class CalConvert extends AppCompatActivity {
         numero1 = 0.0f;
     }
 
-    public void euros(View view) {
-        String euro = tvvalor.getText().toString();
-        Double euros = Double.parseDouble(euro);
+    public void pesos(View view) {
+        String procedimiento = tvvalor.getText().toString();
 
-        Double resultado;
-        resultado = euros * 1.13;
+        String rpesos = "";
+
+            String valor = procedimiento.toString();
+            double resultado = Integer.parseInt(valor);
+            resultado = resultado * 53.50;
+
+            rpesos = String.valueOf(resultado);
+
+        tvvalor.setText(rpesos);
 
     }
 
     public void Dolares(View view) {
-        String dolar = tvvalor.getText().toString();
-        Double dolares = Double.parseDouble(dolar);
+        String procedimiento = tvvalor.getText().toString();
 
-        Double resultado = dolares * 1.13;
+        String rdolar = "";
 
+            String valor = procedimiento.toString();
+            double resultado = Integer.parseInt(valor);
+            resultado = resultado / 53.50;
+
+            rdolar = String.valueOf(resultado);
+
+        tvvalor.setText(rdolar);
+
+
+    }
+
+    public void punto(View view) {
+        numero1 = Float.parseFloat(tvvalor.getText().toString());
+        if (numero1 == 0.0f){
+            tvvalor.setText(".");
+        }
+        else{
+            tvvalor.setText(tvvalor.getText() + ".");
+        }
     }
 }

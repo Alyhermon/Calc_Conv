@@ -29,7 +29,7 @@
 
     <TextView
         android:id="@+id/tvvalor"
-        android:layout_width="450dp"
+        android:layout_width="390dp"
         android:layout_height="50dp"
         android:layout_marginLeft="-390dp"
         android:layout_marginTop="200dp"
@@ -48,21 +48,21 @@
         android:id="@+id/clear_text"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="-390dp"
+        android:layout_marginLeft="-350dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="#4ad"
         android:onClick="clear_text"
         android:text="CLEAR" />
 
     <Button
-        android:id="@+id/euro"
+        android:id="@+id/pesos"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="#4ad356"
-        android:onClick="euros"
-        android:text="EUR" />
+        android:onClick="pesos"
+        android:text="DR" />
 
     <Button
         android:layout_width="100dp"
@@ -104,7 +104,7 @@
 
     <Button
         android:id="@+id/num0"
-        android:layout_width="320dp"
+        android:layout_width="210dp"
         android:layout_height="50dp"
         android:layout_marginTop="500dp"
         android:layout_marginLeft="-100dp"
@@ -112,11 +112,20 @@
         android:text="0" />
 
     <Button
+        android:id="@+id/punto"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="500dp"
+        android:onClick="punto"
+        android:text="." />
+
+    <Button
         android:id="@+id/num8"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="-211dp"
         android:layout_marginTop="350dp"
-        android:layout_marginLeft="-210dp"
         android:onClick="numero8"
         android:text="8" />
 
