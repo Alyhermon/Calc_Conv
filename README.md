@@ -1,2 +1,3 @@
 # Calc_Conv
-This an app mobile created with android studio java
+
+Calculadora convertidora sencilla en Android Studio
