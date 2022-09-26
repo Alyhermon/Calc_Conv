@@ -6,18 +6,39 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class CalConvert extends AppCompatActivity {
+public class CalConvert extends AppCompatActivity implements View.OnClickListener{
 
 
+    EditText editText;
+
+    EditText nombre;
     TextView tvnombre;
     TextView tvvalor;
     float numero1 = 0.0f;
-    Button btn;
+    Button num1;
+    Button num2;
+    Button num3;
+    Button num4;
+    Button num5;
+    Button num6;
+    Button num7;
+    Button num8;
+    Button num9;
+    Button num0;
+
+    Button activar;
+    Button clear;
+    Button dr;
+    Button usa;
+    Button punto;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +52,151 @@ public class CalConvert extends AppCompatActivity {
 
         tvnombre.setText(info);
 
+
+        //Declaracion de los botones
+        nombre = findViewById(R.id.nombre);
+
+        num1 = findViewById(R.id.num1);
+        num2 = findViewById(R.id.num2);
+        num3 = findViewById(R.id.num3);
+        num4 = findViewById(R.id.num4);
+        num5 = findViewById(R.id.num5);
+        num6 = findViewById(R.id.num6);
+        num7 = findViewById(R.id.num7);
+        num8 = findViewById(R.id.num8);
+        num9 = findViewById(R.id.num9);
+        num0 = findViewById(R.id.num0);
+
+        //Declaracion de los botones funcionales, como clear, DR, y US
+
+        clear = findViewById(R.id.clear_text);
+        dr = findViewById(R.id.pesos);
+        usa = findViewById(R.id.americano);
+        punto = findViewById(R.id.punto);
+
+        //editText
+
+
+        num1.setOnClickListener(this);
+        num1.setEnabled(false);
+        num2.setEnabled(false);
+        num3.setEnabled(false);
+        num4.setEnabled(false);
+        num5.setEnabled(false);
+        num6.setEnabled(false);
+        num7.setEnabled(false);
+        num8.setEnabled(false);
+        num9.setEnabled(false);
+        num0.setEnabled(false);
+        clear.setEnabled(false);
+        dr.setEnabled(false);
+        usa.setEnabled(false);
+        punto.setEnabled(false);
+
+
+
+
+        nombre.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.toString().equals("")) {
+                    num1.setEnabled(false);
+                    num2.setEnabled(false);
+                    num3.setEnabled(false);
+                    num4.setEnabled(false);
+                    num5.setEnabled(false);
+                    num6.setEnabled(false);
+                    num7.setEnabled(false);
+                    num8.setEnabled(false);
+                    num9.setEnabled(false);
+                    num0.setEnabled(false);
+                    clear.setEnabled(false);
+                    dr.setEnabled(false);
+                    usa.setEnabled(false);
+                    punto.setEnabled(false);
+
+
+
+                }else{
+                    num1.setEnabled(true);
+                    num2.setEnabled(true);
+                    num3.setEnabled(true);
+                    num4.setEnabled(true);
+                    num5.setEnabled(true);
+                    num6.setEnabled(true);
+                    num7.setEnabled(true);
+                    num8.setEnabled(true);
+                    num9.setEnabled(true);
+                    num0.setEnabled(true);
+                    clear.setEnabled(true);
+                    dr.setEnabled(true);
+                    usa.setEnabled(true);
+                    punto.setEnabled(true);
+                    tvnombre.setText(nombre.getText().toString());
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.toString().equals("")) {
+                    num1.setEnabled(false);
+                    num2.setEnabled(false);
+                    num3.setEnabled(false);
+                    num4.setEnabled(false);
+                    num5.setEnabled(false);
+                    num6.setEnabled(false);
+                    num7.setEnabled(false);
+                    num8.setEnabled(false);
+                    num9.setEnabled(false);
+                    num0.setEnabled(false);
+                    clear.setEnabled(false);
+                    dr.setEnabled(false);
+                    usa.setEnabled(false);
+                    punto.setEnabled(false);
+                }else{
+                    num1.setEnabled(true);
+                    num2.setEnabled(true);
+                    num3.setEnabled(true);
+                    num4.setEnabled(true);
+                    num5.setEnabled(true);
+                    num6.setEnabled(true);
+                    num7.setEnabled(true);
+                    num8.setEnabled(true);
+                    num9.setEnabled(true);
+                    num0.setEnabled(true);
+                    clear.setEnabled(true);
+                    dr.setEnabled(true);
+                    usa.setEnabled(true);
+                    punto.setEnabled(true);
+                    for (int i = 10; i == i; ++i ){
+
+                        if (nombre.length() <10)
+                        {
+                            tvnombre.setText(nombre.getText().toString());
+                            break;
+
+                        }
+
+                    }
+
+
+
+
+
+
+                }
+
+            }
+        });
     }
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
     //Botones...
@@ -180,5 +345,16 @@ public class CalConvert extends AppCompatActivity {
         else{
             tvvalor.setText(tvvalor.getText() + ".");
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()) {
+            case R.id.num1: {
+                nombre.setText("");
+                break;
+            }
+        }
+
     }
 }

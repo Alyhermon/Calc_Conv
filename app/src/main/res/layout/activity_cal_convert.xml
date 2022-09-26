@@ -8,30 +8,33 @@
     tools:context=".CalConvert"
     tools:ignore="ExtraText">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bienvenido/a: "
-        android:textSize="30dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="5dp" />
 
     <TextView
         android:id="@+id/tvnombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Escriba el valor"
         android:layout_marginLeft="10dp"
-        android:textSize="30dp"
+        android:layout_marginTop="130dp"
+        android:hint="Nombre"
 
-        />
+        android:textSize="30dp"
+        android:visibility="visible"
+        tools:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="-60dp"
+        android:textAlignment="center"
+        android:hint="Escriba su nombre"/>
 
     <TextView
         android:id="@+id/tvvalor"
         android:layout_width="390dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="-390dp"
+        android:layout_marginLeft="-350dp"
         android:layout_marginTop="200dp"
         android:textColor="@color/white"
         android:background="@color/black"
@@ -48,7 +51,7 @@
         android:id="@+id/clear_text"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="-350dp"
+        android:layout_marginLeft="-340dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="#4ad"
         android:onClick="clear_text"
@@ -65,6 +68,7 @@
         android:text="DR" />
 
     <Button
+        android:id="@+id/americano"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginLeft="10dp"

@@ -4,13 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
     EditText edtnombre;
     Button btnsiguiente;
 
@@ -21,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         edtnombre = (EditText) findViewById(R.id.edtnombre);
         btnsiguiente = (Button) findViewById(R.id.btnsiguiente);
     }
+
+
     public void siguiente(View V){
         if (validar()){
             Toast.makeText(this, "Entrando...", Toast.LENGTH_SHORT).show();
